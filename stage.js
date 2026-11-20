@@ -8,7 +8,7 @@ const MENU=[["grp","Data"],["mi","Overview","overview","layers"],["mi","Sources 
  ["grp","Admin"],["mi","Capacity and scale","scale","box"],["mi","Security and RBAC","security","key"]];
 const RAIL=["layers","database","users","check","shield","users2","globe","gift","chart","box"];
 let cur=0, drawerOpen=false;
-function drawRail(on){ document.getElementById("rail").innerHTML='<div class="logo"><img src="assets/img/freestand-logo.png" alt="FreeStand" style="width:22px;height:22px;object-fit:contain"/></div>'+RAIL.map((n,i)=>'<div class="ri'+(n===on?" on":"")+'">'+ic(n,15,"rgba(255,255,255,0.78)")+'</div>').join(""); }
+function drawRail(on){ document.getElementById("rail").innerHTML='<div class="logo"><img src="assets/img/freestand-icon.svg" alt="FreeStand" style="width:22px;height:22px;object-fit:contain"/></div>'+RAIL.map((n,i)=>'<div class="ri'+(n===on?" on":"")+'">'+ic(n,15,"rgba(255,255,255,0.78)")+'</div>').join(""); }
 function drawMenu(pg){ document.getElementById("menu").innerHTML='<div class="cons"><span>'+ic("layers",13,"#052762")+'</span>FreeStand Data OS</div>'+MENU.map(m=>m[0]==="grp"?'<div class="mgrp">'+m[1]+'</div>':'<div class="mi'+(m[2]===pg?" on":"")+'">'+ic(m[3],13,m[2]===pg?"#1D4ED8":"#9CA3AF")+m[1]+'</div>').join(""); }
 function setDrawer(open){
   drawerOpen=open; const d=document.getElementById("drawer"); d.classList.toggle("open",open);
